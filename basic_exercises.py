@@ -1,3 +1,7 @@
+import multiprocessing
+import os
+
+
 # prints twinkle twinkle properly formatted
 print("Twinkle, twinkle, little star, \n\tHow I wonder what you are! \n\t\tUp above the world so high, \n\t\tLike a "
       "diamond in the sky. \nTwinkle, twinkle, little star, \n\tHow I wonder what you are!")
@@ -23,6 +27,8 @@ color_list = ["Red","Green","White" ,"Black"]
 print(color_list[0])
 print(color_list[-1])
 
+
+
 # write a program to find the greatest common denom for 2 ints
 
 def gcd(x, y):
@@ -39,3 +45,7 @@ def gcd(x, y):
 
 print(gcd(12, 17))
 print(gcd(4, 6))
+
+
+print(multiprocessing.cpu_count())
+print("Current File Name : ",os.path.realpath(__file__))
