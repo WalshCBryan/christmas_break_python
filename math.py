@@ -1,19 +1,18 @@
 import math
-
-
+import re
 
 # degrees to radian
 
-pi=22/7
+pi = 22 / 7
 degree = float(input("Input degrees: "))
-radian = degree*(pi/180)
+radian = degree * (pi / 180)
 print(radian)
 
 # radian to degree
 
-pi=22/7
+pi = 22 / 7
 radian = float(input("Input radians: "))
-degree = radian*(180/pi)
+degree = radian * (180 / pi)
 print(degree)
 
 # accept dimensions and calculate area of parallelogram
@@ -23,14 +22,17 @@ height = float(input('Measurement of height: '))
 area = base * height
 print("Area is: ", area)
 
+
 # sum of all divisors
 
 def sum_div(number):
     divisors = [1]
     for i in range(2, number):
-        if (number % i)==0:
+        if (number % i) == 0:
             divisors.append(i)
     return sum(divisors)
+
+
 print(sum_div(8))
 print(sum_div(12))
 
@@ -42,18 +44,29 @@ a = float(input("a: "))
 b = float(input("b: "))
 c = float(input("c: "))
 
-r = b**2 - 4*a*c
+r = b ** 2 - 4 * a * c
 
 if r > 0:
     num_roots = 2
-    x1 = (((-b) + sqrt(r))/(2*a))
-    x2 = (((-b) - sqrt(r))/(2*a))
+    x1 = (((-b) + sqrt(r)) / (2 * a))
+    x2 = (((-b) - sqrt(r)) / (2 * a))
     print("There are 2 roots: %f and %f" % (x1, x2))
 elif r == 0:
     num_roots = 1
-    x = (-b) / 2*a
+    x = (-b) / 2 * a
     print("There is one root: ", x)
 else:
     num_roots = 0
     print("No roots, discriminant < 0.")
     exit()
+
+# Write a Python program to check that a string contains only a certain set of characters (in this case a-z, A-Z and 0-9).
+
+def is_allowed_specific_char(string):
+    charRe = re.compile(r'[^a-zA-Z0-9.]')
+    string = charRe.search(string)
+    return not bool(string)
+
+
+print(is_allowed_specific_char("ABCDEFabcdef123450"))
+print(is_allowed_specific_char("*&%@#!}{"))
