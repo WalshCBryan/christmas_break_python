@@ -60,6 +60,7 @@ else:
     print("No roots, discriminant < 0.")
     exit()
 
+
 # Write a Python program to check that a string contains only a certain set of characters (in this case a-z, A-Z and 0-9).
 
 def is_allowed_specific_char(string):
@@ -70,15 +71,33 @@ def is_allowed_specific_char(string):
 
 print(is_allowed_specific_char("ABCDEFabcdef123450"))
 print(is_allowed_specific_char("*&%@#!}{"))
-#Write a Python program that matches a string that has an a followed by zero or more b's.
+
+
+# Write a Python program that matches a string that has an a followed by zero or more b's.
 
 def text_match(text):
     patterns = 'ab*?'
-    if re.search(patterns,  text):
+    if re.search(patterns, text):
         return 'Found a match!'
     else:
-        return('Not matched!')
+        return ('Not matched!')
+
 
 print(text_match("ac"))
 print(text_match("abc"))
 print(text_match("abbc"))
+
+
+# Write a Python program to find sequences of lowercase letters joined with a underscore.
+
+def text_match(text):
+    patterns = '^[a-z]+_[a-z]+$'
+    if re.search(patterns, text):
+        return 'Found a match!'
+    else:
+        return ('Not matched!')
+
+
+print(text_match("aab_cbbbc"))
+print(text_match("aab_Abbbc"))
+print(text_match("Aaab_abbbc"))
