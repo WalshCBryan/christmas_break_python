@@ -9,3 +9,9 @@ print(array_num[2])
 
 array_num.append(11)
 print(array_num)
+print("Length in bytes of one array item: "+str(array_num.itemsize))
+
+
+array_num.append(11)
+print("Number of occurrences of the number 3 in the said array: "+str(array_num.count(11)))
+
